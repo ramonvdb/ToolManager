@@ -1,0 +1,169 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ToolManagerUI" x:Class="ToolManagerUI.EditToolWindow"
+        mc:Ignorable="d" FontSize="16"
+        Title="Tool Manager - Edit Tool" SizeToContent="WidthAndHeight"
+        Icon="Milling_tool_icon.png" Closing="Window_Closing" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <System:Double x:Key="ComboBoxWidth">120</System:Double>
+        <System:Double x:Key="ComboFontSize">14</System:Double>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+        
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Column="1" Grid.Row="1" Stroke="#FFFF7F27" StrokeThickness="2" Margin="5" RadiusX="2" RadiusY="2"/>
+        <Grid x:Name="ChildGrid" Grid.Column="1" Grid.Row="1"  Margin="10" ScrollViewer.CanContentScroll="True" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Fill="#FFFF7F27" RadiusX="2" RadiusY="2"/>
+            <TextBlock x:Name="ToolTextBlock" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Text="Edit Tool" 
+						TextAlignment="Center" FontSize="20" Margin="2"  Foreground="White"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Type" Foreground="#FFFF7F27" Margin="2"/>
+            <TextBlock Grid.Column="3" Grid.Row="1" Text="Function" Foreground="#FFFF7F27" Margin="2"/>
+
+            <TextBlock x:Name="TypeTextBlock" Grid.Column="1" Grid.Row="2" Text="-" Foreground="#FF6C6B6B" Margin="2" />
+            <TextBlock x:Name="FunctionTextBlock" Grid.Column="3" Grid.Row="2" Text="-" Foreground="#FF6C6B6B" Margin="2"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="Holder" Foreground="#FFFF7F27" Margin="2"/>
+            <TextBlock Grid.Column="3" Grid.Row="4" Text="Machine" Foreground="#FFFF7F27" Margin="2"/>
+
+            <TextBlock x:Name="HolderTextBlock" Grid.Column="1" Grid.Row="5" Text="-" Foreground="#FF6C6B6B" Margin="2"/>
+            <TextBlock x:Name="MachineTextBlock" Grid.Column="3" Grid.Row="5" Text="-" Foreground="#FF6C6B6B" Margin="2"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="7" Text="Diameter" Foreground="#FFFF7F27" Margin="2"/>
+            <TextBlock Grid.Column="3" Grid.Row="7" Text="Length" Foreground="#FFFF7F27" Margin="2"/>
+
+            <TextBlock x:Name="DiameterTextBlock" Grid.Column="1" Grid.Row="8" Text="-" Foreground="#FF6C6B6B" Margin="2"/>
+            <TextBlock x:Name="LengthTextBlock" Grid.Column="3" Grid.Row="8" Text="-" Foreground="#FF6C6B6B" Margin="2"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="10" Text="Storage" Foreground="#FFFF7F27" Margin="2"/>
+            <TextBlock Grid.Column="3" Grid.Row="10" Text="Location" Foreground="#FFFF7F27" Margin="2"/>
+            
+            <TextBox x:Name="StorageTextBox" Grid.Column="1" Grid.Row="11" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}" Width="{DynamicResource ComboBoxWidth}" HorizontalAlignment="Left"/>
+            <TextBox x:Name="LocationTextBox" Grid.Column="3" Grid.Row="11" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}" Width="{DynamicResource ComboBoxWidth}" HorizontalAlignment="Left"/>
+            
+            <TextBlock Grid.Column="1" Grid.Row="13" Text="Description" Foreground="#FFFF7F27" Margin="2"/>
+            <Rectangle x:Name="DescriptionRec" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="3" Stroke="Red" StrokeThickness="3" Visibility="Hidden"/>
+            <TextBox x:Name="DescriptionTextBox" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="3" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}" TextChanged="DescriptionTextBox_TextChanged"/>
+
+
+            <Rectangle Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="3" RadiusX="2" RadiusY="2" Stroke="#FFFFA527" />
+            <TextBlock Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="3" Text="Holder" 
+						TextAlignment="Center" FontSize="20" Margin="2"  Foreground="#FFFFA527"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="17" Text="Vendor" Foreground="#FFFF7F27" Margin="2"/>
+            <ComboBox x:Name="HolderVendorComboBox" Grid.Column="1" Grid.Row="18" Margin="2" Grid.ColumnSpan="3" IsEditable="True" 
+                      FontSize="{DynamicResource ComboFontSize}" Text="Select"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="20" Text="Article Number" Foreground="#FFFF7F27" Margin="2" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="HolderArtTextBox" Grid.Column="1" Grid.Row="21" Grid.ColumnSpan="3" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}"/>
+
+            <Rectangle Grid.Column="1" Grid.Row="23" Grid.ColumnSpan="3" RadiusX="2" RadiusY="2" Stroke="#FFFFA527" />
+            <TextBlock Grid.Column="1" Grid.Row="23" Grid.ColumnSpan="3" Text="Extension" 
+						TextAlignment="Center" FontSize="20" Margin="2"  Foreground="#FFFFA527"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="24" Text="Vendor" Foreground="#FFFF7F27" Margin="2"/>
+            <ComboBox x:Name="ExtensionVendorComboBox" Grid.Column="1" Grid.Row="25" Margin="2" Grid.ColumnSpan="3" IsEditable="True" 
+                      FontSize="{DynamicResource ComboFontSize}" Text="Select" />
+
+            <TextBlock Grid.Column="1" Grid.Row="26" Text="Article Number" Foreground="#FFFF7F27" Margin="2" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="ExtensionArtTextBox" Grid.Column="1" Grid.Row="27" Grid.ColumnSpan="3" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}"/>
+
+
+            <Rectangle Grid.Column="1" Grid.Row="29" Grid.ColumnSpan="3" RadiusX="2" RadiusY="2" Stroke="#FFFFA527" />
+            <TextBlock Grid.Column="1" Grid.Row="29" Grid.ColumnSpan="3" Text="Tool" 
+							TextAlignment="Center" FontSize="20" Margin="2"  Foreground="#FFFFA527"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="30" Text="Vendor" Foreground="#FFFF7F27" Margin="2"/>
+            <ComboBox x:Name="ToolVendorComboBox" Grid.Column="1" Grid.Row="31" Margin="2" Grid.ColumnSpan="3" IsEditable="True" 
+                      FontSize="{DynamicResource ComboFontSize}" Text="Select" />
+
+            <TextBlock Grid.Column="1" Grid.Row="32" Text="Article Number" Foreground="#FFFF7F27" Margin="2" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="ToolArtTextBox" Grid.Column="1" Grid.Row="33" Grid.ColumnSpan="3" Foreground="Black" Margin="2" 
+                     FontSize="{DynamicResource ComboFontSize}"/>
+
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="CancelButton" Margin="5" Width="110" Content="Cancel" Grid.Column="2" Grid.Row="1"
+			Background="{x:Null}" BorderBrush="#FFFF7F27" Foreground="#FFFF7F27" BorderThickness="1" FontWeight="SemiBold" 
+            Template="{DynamicResource ButtonControlTemplate}" Click="CancelButton_Click"/>
+            <Button x:Name="AcceptButton" Margin="5" Width="110" Content="Accept" Grid.Column="1" Grid.Row="1"
+			BorderBrush="#FFFF7F27" BorderThickness="1" Foreground="White" FontWeight="SemiBold" 
+            Background="#FFFF7F27" Template="{DynamicResource ButtonControlTemplate}" Click="AcceptInput"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
